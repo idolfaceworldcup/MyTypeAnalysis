@@ -11,9 +11,9 @@ app.use(compression())
 
 const indexRouter = require('./routes/index')
 const api = require('./api/handler/api')
-
 app.use('/', indexRouter)
 app.use('/api', api)
+
 
 app.listen(3000, () => {
     console.log('connect!')

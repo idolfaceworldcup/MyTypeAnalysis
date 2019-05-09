@@ -1,12 +1,19 @@
 const express = require('express');
 const router = express.Router();
 
-router.use((req, res, next) => {
+router.get('/401', (req, res, next) => {
     res.status(404).send();
 })
 
-router.use((err, req, res, next) => {
-    console.error(err.stack);
+router.get('/403', (req, res, next) => {
+    res.status(403).send();
+})
+
+router.get('/404', (req, res, next) => {
+    res.status(404).send();
+})
+
+router.get('/500', (req, res, next) => {
     res.status(500).send();
 })
 
